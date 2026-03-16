@@ -13,7 +13,7 @@
 import fs from "node:fs";
 import c from "chalk";
 import { encrypt, decrypt, getAlgorithmInfo } from "./libs";
-import { ask, createRL, ensureDir } from "./helpers";
+import { ask, makeRl, ensureDir } from "./helpers";
 import { Args } from "./types";
 import { handleEncrypt } from "./commands";
 
@@ -77,7 +77,7 @@ function parseArgs(): Args {
 // ── Command: Decrypt ────────────────────────────────────────────────────────
 
 async function handleDecrypt(args: Args): Promise<void> {
-    const rl = createRL();
+    const rl = makeRl();
 
     try {
         // Get encrypted file path

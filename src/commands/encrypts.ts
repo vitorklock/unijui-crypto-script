@@ -1,11 +1,11 @@
-import { ask, createRL, ensureDir } from "@/helpers";
+import { ask, makeRl, ensureDir } from "@/helpers";
 import { encrypt } from "@/libs";
 import { Args } from "@/types";
 import c from "chalk";
 import fs from "node:fs";
 
 export async function handleEncrypt(args: Args): Promise<void> {
-    const rl = createRL();
+    const rl = makeRl();
 
     try {
         // Get file path
