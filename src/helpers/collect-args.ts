@@ -9,7 +9,7 @@ interface ResolvedArgs {
     password: string;
 }
 
-async function collectArgs(
+export async function collectArgs(
     mode: "encrypt" | "decrypt",
     args: Args
 ): Promise<ResolvedArgs> {
