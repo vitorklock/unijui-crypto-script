@@ -1,4 +1,4 @@
-# Cryptography Module — AES-256-GCM
+# Unijui Crypto Script — AES-256-GCM
 
 Uses the AES (Advanced Encryption Standard) algorithm with a 256-bit key in GCM (Galois/Counter Mode), which provides both confidentiality and data authentication/integrity (AEAD).
 
