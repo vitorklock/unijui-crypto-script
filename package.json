@@ -1,0 +1,21 @@
+{
+    "name": "crypto-script",
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+        "build": "bun build src/script.ts --target=node --outdir=dist",
+        "start": "node dist/script.js",
+        "encrypt": "node dist/script.js encrypt",
+        "decrypt": "node dist/script.js decrypt",
+        "test": "tsx src/test.ts",
+        "dev": "tsx src/script.ts"
+    },
+    "dependencies": {
+        "chalk": "^5.3.0"
+    },
+    "devDependencies": {
+        "@types/node": "^25.5.0",
+        "tsx": "^4.21.0",
+        "typescript": "^5.9.3"
+    }
+}
