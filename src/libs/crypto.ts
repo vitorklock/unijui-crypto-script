@@ -149,7 +149,7 @@ export function decrypt(encryptedBase64: string, password: string): string {
     }
 }
 
-//  Utilities ─
+//  UTILITIES
 
 export function generateRandomPassword(bytes: number = 32): string {
     return crypto.randomBytes(bytes).toString("hex");

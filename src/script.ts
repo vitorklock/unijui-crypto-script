@@ -24,7 +24,7 @@ function printBanner(): void {
     console.log();
 }
 
-// PARSING ARGSprintHelp
+// PARSING ARGS
 
 
 function parseArgs(): Args {
