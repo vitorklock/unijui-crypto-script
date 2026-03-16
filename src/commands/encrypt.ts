@@ -1,4 +1,4 @@
-import { ensureDir, collectArgs } from "@/helpers";
+import { ensureDir, collectArgs, printPreview } from "@/helpers";
 import { encrypt } from "@/libs";
 import { Args } from "@/types";
 import c from "chalk";
@@ -10,10 +10,6 @@ export async function handleEncrypt(args: Args): Promise<void> {
     // Read file contents
     const plaintext = fs.readFileSync(input, "utf-8");
     console.log(c.dim(`\n  File read: ${plaintext.length} characters`));
-
-    // Show content preview
-    const preview = plaintext.substring(0, 200);
-    console.log(c.dim(`  Preview: "${preview}${plaintext.length > 200 ? "..." : ""}"`));
 
     // Encrypt
     console.log(c.cyan("\n  ⏳ Encrypting..."));
@@ -37,8 +33,6 @@ export async function handleEncrypt(args: Args): Promise<void> {
     console.log(c.dim(`    IV (hex):           ${result.ivHex}`));
     console.log(c.dim(`    Execution time:     ${elapsed} ms`));
 
-    // Show encrypted content preview
-    const encPreview = result.encrypted.substring(0, 80);
-    console.log(c.dim(`    Encrypted preview:  ${encPreview}...`));
-    console.log();
+    const preview = result.encrypted.substring(0, 80);
+    printPreview(preview);
 }
