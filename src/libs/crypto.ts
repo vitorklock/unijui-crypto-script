@@ -1,21 +1,3 @@
-/**
- * Cryptography Module — AES-256-GCM
- *
- * Uses the AES (Advanced Encryption Standard) algorithm with a 256-bit key
- * in GCM (Galois/Counter Mode), which provides both confidentiality and
- * data authentication/integrity (AEAD).
- * 
- * Passwords are turned into a 256 character key by hashing it 100k times with a random salt 
- *
- * Encrypted file structure (base64-encoded):
- *   - Salt (16 bytes): used to derive the key from the password
- *   - IV (12 bytes): unique initialization vector per operation
- *   - Auth Tag (16 bytes): GCM authentication tag
- *   - Ciphertext (variable length)
- * 
- * [ Salt: 16 bytes ][ IV: 12 bytes ][ Auth Tag: 16 bytes ][ Ciphertext: variable ]
- */
-
 import crypto from "node:crypto";
 
 // CONSTANTS
